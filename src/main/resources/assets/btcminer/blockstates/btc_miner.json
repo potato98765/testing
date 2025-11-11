@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "btcminer:block/btc_miner"
+    },
+    "powered=true": {
+      "model": "btcminer:block/btc_miner_on"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "btcminer:block/btc_miner_side",
+    "north": "btcminer:block/btc_miner_front_on",
+    "south": "btcminer:block/btc_miner_side",
+    "east": "btcminer:block/btc_miner_side",
+    "west": "btcminer:block/btc_miner_side",
+    "up": "btcminer:block/btc_miner_top",
+    "down": "btcminer:block/btc_miner_side"
+  }
+}
