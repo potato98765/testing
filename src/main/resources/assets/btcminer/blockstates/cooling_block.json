@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "btcminer:cooling_block"
+      "model": "btcminer:block/cooling_block"
     }
   }
 }

@@ -1,29 +1,22 @@
 plugins {
-    id 'fabric-loom' version '1.6.9'
+    id 'fabric-loom' version '1.8-SNAPSHOT'
     id 'maven-publish'
 }
 
-version = '1.0.0'
-group = 'com.example.btcminer'
+version = project.mod_version
+group = project.maven_group
 
 base {
-    archivesName = 'btcminer'
+    archivesName = project.archives_base_name
 }
 
 repositories {
     mavenCentral()
-    maven { url 'https://maven.fabricmc.net/' }
-}
-
-dependencies {
-    minecraft "com.mojang:minecraft:1.21"
-    mappings "net.fabricmc:yarn:1.21+build.9:v2"
-    modImplementation "net.fabricmc:fabric-loader:0.15.11"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:0.102.0+1.21"
 }
 
 loom {
     splitEnvironmentSourceSets()
+    
     mods {
         btcminer {
             sourceSet sourceSets.main
@@ -32,8 +25,16 @@ loom {
     }
 }
 
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+}
+
 processResources {
     inputs.property "version", project.version
+    
     filesMatching("fabric.mod.json") {
         expand "version": project.version
     }
